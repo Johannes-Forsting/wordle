@@ -1,3 +1,12 @@
+body{
+    background-color: #DDD0C8;
+}
+
+h1{
+
+    color: #323232;
+}
+
 .word{
     display: flex;
     flex-direction: row;
@@ -18,8 +27,9 @@
     width: 6vh;
     height: 6vh;
     border-radius: 10px;
-    border: 4px solid #000000;
+    border: 4px solid #323232;
     margin: 2px;
+    color: #323232;
 }
 
 .keyboard{
@@ -42,23 +52,24 @@
     width: 6vh;
     height: 6vh;
     border-radius: 10px;
-    border: 4px solid #000000;
+    border: 4px solid #323232;
     margin: 2px;
+    color: #323232;
 }
 
 .enter{
     width: 16vh;
-    background-color: #01ce0e;
+    background-color: #86b049;
 }
 
 
 .delete{
     padding-right: 10px;
-    background-color: #ff0000;
+    background-color: #f94449;
 }
 
 .current-row{
-    box-shadow: 0 0 10px 3px #7d8080;
+    box-shadow: 0 0 10px 3px #323232;
 
 }
 

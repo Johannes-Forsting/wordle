@@ -8,6 +8,8 @@ let currentRow = 1
 let currentLetter = 1
 let wrongLetters = []
 
+let hasWon = false
+
 
 window.addEventListener('load', (event) => {
     getWord()
@@ -123,9 +125,9 @@ function checkResult(result){
         if(word.charAt(i) === result.charAt(i)){
 
 
-            document.getElementById(temp).style.backgroundColor = "green";
+            document.getElementById(temp).style.backgroundColor = "#6aaa64";
         }else if(word.includes(result.charAt(i))){
-            document.getElementById(temp).style.backgroundColor = "yellow";
+            document.getElementById(temp).style.backgroundColor = "#f1d148";
         }
         else {
             document.getElementById(result.charAt(i)).style.backgroundColor = "grey";
@@ -136,7 +138,8 @@ function checkResult(result){
 
 
     if(result === word){
-        hasWon()
+        hasWon = true
+        checkHasWon()
     }
 }
 
@@ -145,8 +148,8 @@ function changeRow(){
     currentRow++
     currentLetter = 1
 
-    if(currentRow === 7){
-        hasLost()
+    if(currentRow === 7 && !hasWon){
+        checkHasLost()
     }
     else {
         document.getElementById("row" + currentRow).classList.add('current-row');
@@ -157,22 +160,22 @@ function changeRow(){
 
 function onHover(object){
 
-    object.style.background= 'blue'
+    object.style.background= '#3792cb'
 }
 
 function onRemoveHover(object){
     if (wrongLetters.includes(object.id) ){
         object.style.background= 'grey'
     }else{
-        object.style.background= 'white'
+        object.style.background= '#DDD0C8'
     }
 }
 
-function hasWon(){
+function checkHasWon(){
     document.getElementById("won-or-not").innerText = "YOU WON"
     document.getElementById("button").style.visibility = "visible"
 }
-function hasLost(){
+function checkHasLost(){
     document.getElementById("won-or-not").innerText = "YOU LOST! THE WORD WAS: " + word
     document.getElementById("button").style.visibility = "visible"
 }
