@@ -35,6 +35,18 @@ document.getElementById("keyboard").onclick = (element) => {
 
 }
 
+document.addEventListener('keydown', function(event) {
+    console.log(event.key)
+    const letter = event.key.toUpperCase()
+    if(isLetter(letter)){
+        setLetter(letter)
+    }else if(letter === "BACKSPACE"){
+        deleteLetter()
+    }else if(letter === "ENTER"){
+        checkAnswer()
+    }
+});
+
 function isLetter(id) {
     return id.length === 1 && id.match(/[A-Z]/i);
 }
